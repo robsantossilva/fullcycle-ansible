@@ -52,3 +52,16 @@ ansible-playbook -i hosts playbook.yaml
 ```
 
 ./roles/install_docker/tasks/main.yml
+
+## Install docker swarm 
+```bash
+> cd ~/roles
+> ansible-galaxy init install_docker_swarm
+```
+
+
+
+
+
+
+
