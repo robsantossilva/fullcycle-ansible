@@ -53,15 +53,49 @@ ansible-playbook -i hosts playbook.yaml
 
 ./roles/install_docker/tasks/main.yml
 
-## Install docker swarm 
+## Install docker swarm manager
 ```bash
 > cd ~/roles
-> ansible-galaxy init install_docker_swarm
+> ansible-galaxy init docker_swarm_manager
 ```
 
+### Run playbook
+```bash
+> cd ~/roles
+> ansible-playbook -i ../hosts main.yaml
+```
 
+## Install docker swarm worker
+```bash
+> cd ~/roles
+> ansible-galaxy init docker_swarm_worker
+```
 
+## Validar workers
+- Entrar na maquina manager e rodar o comando:
+```bash
+docker node ls
+```
 
+## Install deploy_stack
+```bash
+> cd ~/roles
+> ansible-galaxy init deploy_stack
+```
 
+## Validar stack
+- Entrar na maquina manager e rodar o comando:
+```bash
+> docker service ls
+```
 
+Ver replicas
+```bash
+> docker service ps app_app
+```
+
+Escalar containers
+```bash
+> docker service scale app_app=6
+```
 

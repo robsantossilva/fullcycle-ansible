@@ -13,6 +13,11 @@
 python3 -m pip install --user ansible
 ```
 
+### Installation community docker
+```bash
+> ansible-galaxy collection install community.docker
+```
+
 ### Arquivo de inventario
 Lista (Inventario) de IPs de todas as maquinas
 
