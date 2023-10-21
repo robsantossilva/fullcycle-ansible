@@ -8,6 +8,9 @@
      - curl
      - gnupg
      - lsb-release
+     - python3-pip
+     - virtualenv
+     - python3-setuptools
     state: present
     update_cache: yes
 

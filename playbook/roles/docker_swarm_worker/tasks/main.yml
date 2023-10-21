@@ -1,0 +1,9 @@
+---
+# tasks file for docker_swarm_worker
+
+- name: join in a swarm clsuter
+  docker_swarm:
+    state: join
+    advertise_addr: "{{ ansible_default_ipv4.address }}" #pegar ip do worker
+    join_token: "{{ hostvars[groups['manager'][0]].join_token_worker }}"
+    remote_addrs: "{{ hostvars[groups['manager'][0]]['ansible_default_ipv4']['address'] }}"
