@@ -1,0 +1,10 @@
+[all]
+IPS da AWS
+
+[manager]
+
+[worker]
+
+[all:vars]
+ansible_ssh_private_key_file=/path/private/key/aws/cert.cer
+ansible_user=ubuntu

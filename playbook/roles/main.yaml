@@ -1,0 +1,25 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  become: true
+  roles:
+    - install_nginx
+    - install_docker
+
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+   - docker_swarm_manager
+
+- hosts: worker
+  remote_user: ubuntu
+  become: true
+  roles:
+   - docker_swarm_worker
+
+- hosts: manager
+  remote_user: ubuntu
+  become: true
+  roles:
+   - deploy_stack
